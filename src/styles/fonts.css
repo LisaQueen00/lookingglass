@@ -1,0 +1,96 @@
+/* 
+.ttf	"truetype"	TrueType，常见桌面字体格式
+.otf	"opentype"	OpenType，常见桌面字体格式
+.woff	"woff"	Web 字体格式，支持压缩
+.woff2	"woff2"	更高效的 Web 字体压缩格式，网页首选
+.eot	"embedded-opentype"	旧版 IE 使用，现已淘汰
+.svg	"svg"	旧式 SVG 字体，已不推荐使用 
+*/
+
+
+
+
+
+@font-face {
+    font-family: "Doto" ;
+    src: url("../public/fonts/Doto/Doto-VariableFont_ROND\,wght.ttf") format("truetype");
+    font-weight: auto;
+}
+
+@font-face {
+    font-family: 'Cinzel_Decorative';
+    src: url('../public/fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf') format("truetype");
+    font-weight: auto;
+}
+
+@font-face {
+    font-family: 'Cinzel_Decorative';
+    src: url('../public/fonts/Cinzel_Decorative/CinzelDecorative-Bold.ttf') format("truetype");
+    font-weight: auto;
+}
+
+@font-face {
+    font-family: 'Cinzel_Decorative';
+    src: url('../public/fonts/Cinzel_Decorative/CinzelDecorative-Black.ttf') format("truetype");
+    font-weight: auto;
+}
+
+@font-face {
+    font-family: "NoteScan" ;
+    src: url("../public/fonts/Noto_Sans_SC/NotoSansSC-VariableFont_wght.ttf") format("truetype");
+    font-weight: auto;
+} 
+
+@font-face {
+    font-family: "JBMono" ;
+    src: url("../public/fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf") format("truetype");
+    font-weight: auto;
+}
+
+@font-face {
+    font-family: "JBMono" ;
+    src: url("../public/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf") format("truetype");
+    font-weight: auto;
+}
+
+@font-face {
+    font-family: "S_G" ;
+    src: url("../public/fonts/Schibsted_Grotesk/SchibstedGrotesk-Italic-VariableFont_wght.ttf") format("truetype");
+    font-weight: auto;
+}
+
+@font-face {
+    font-family: "S_G" ;
+    src: url("../public/fonts/Schibsted_Grotesk/SchibstedGrotesk-VariableFont_wght.ttf") format("truetype");
+    font-weight: auto;
+}
+
+
+/* @font-face {
+    font-family: "" ;
+    src: url("") format("");
+    font-weight: auto;
+} */
+
+
+
+/* --font-: "", serif; */
+@theme {
+  --font-doto: "Doto", serif;
+  --font-cinzel: "Cinzel_Decorative", serif;
+  --font-notescan: "NoteScan", serif;
+  --font-jbmono: "JBMono", serif;
+  --font-s_g: "S_G", serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
