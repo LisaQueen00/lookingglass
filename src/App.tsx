@@ -4,6 +4,8 @@ import WorldGate from './WorldGate'
 import Home from './pages/Home';
 import About from './pages/About';
 import Experiences from './pages/Experiences';
+import Articles from './pages/Articles';
+import Daily from './pages/Daily';
 
 type GameScreen =
   | { type: 'scene' }
@@ -113,6 +115,8 @@ function App() {
       <Route path='/blog/about' element={<About />} />
       <Route path="/blog" element={<Home />} />
       <Route path='/blog/experiences' element={<Experiences />} />
+      <Route path='/blog/articles' element={<Articles />} />
+      <Route path='/blog/daily' element={<Daily />} />
 
       <Route path="/game/*" element={<GameWorld />} />
 

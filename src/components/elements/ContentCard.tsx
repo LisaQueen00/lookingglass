@@ -1,18 +1,11 @@
 import { Link } from 'react-router'
-
-type CardData = {
-  slug: string
-  title?: string
-  date?: string
-  summary?: string
-  cover?: string
-  tags?: string[]
-}
+import type { Article } from '../../types/article'
 
 type ContentCardProps = {
-  data: CardData
-  basePath: string
+    data: Article
+    basePath: string
 }
+
 
 
 
