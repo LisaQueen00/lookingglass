@@ -3,6 +3,7 @@ import { Link, Navigate, Route, Routes } from 'react-router'
 import WorldGate from './WorldGate'
 import Home from './pages/Home';
 import About from './pages/About';
+import Experiences from './pages/Experiences';
 
 type GameScreen =
   | { type: 'scene' }
@@ -111,6 +112,7 @@ function App() {
       <Route path="/" element={<WorldGate />} />
       <Route path='/blog/about' element={<About />} />
       <Route path="/blog" element={<Home />} />
+      <Route path='/blog/experiences' element={<Experiences />} />
 
       <Route path="/game/*" element={<GameWorld />} />
 

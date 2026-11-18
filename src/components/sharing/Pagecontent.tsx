@@ -12,7 +12,7 @@ function Pagecontent( {children}:PagecontentProps ){
     return(
         <section
             // className=" w-full min-h-100 rounded-2xl border border-[#DCEAF6] bg-white p-6 md:p-10 "
-            className=" w-full min-h-100 rounded-2xl bg-white p-6 md:p-10 "
+            className=" w-full min-h-100 rounded-2xl bg-white p-6 md:p-1.5 "
         >
             { children }
         </section>
