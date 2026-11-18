@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+/.content-build-manifest.json
+/public/content/**/*.json
 
 # Editor directories and files
 .vscode/*
