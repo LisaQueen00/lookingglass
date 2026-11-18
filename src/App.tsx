@@ -6,6 +6,7 @@ import About from './pages/About';
 import Experiences from './pages/Experiences';
 import Articles from './pages/Articles';
 import Daily from './pages/Daily';
+import ArticlePage from './pages/ArticlePage'
 
 type GameScreen =
   | { type: 'scene' }
@@ -117,6 +118,8 @@ function App() {
       <Route path='/blog/experiences' element={<Experiences />} />
       <Route path='/blog/articles' element={<Articles />} />
       <Route path='/blog/daily' element={<Daily />} />
+      {/* 三个栏目共用的文章详情页 */}
+      <Route path="/blog/:section/:slug" element={<ArticlePage />} />
 
       <Route path="/game/*" element={<GameWorld />} />
 

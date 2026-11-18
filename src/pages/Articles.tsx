@@ -42,7 +42,7 @@ function Articles(){
                             <ContentCard
                                 key={article.slug}
                                 data={article}
-                                basePath="/blog/experiences"
+                                basePath="/blog/articles"
                             />
                         ))}
                     </div>
