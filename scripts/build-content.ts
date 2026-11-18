@@ -1,6 +1,7 @@
 import { lstat, mkdir, readdir, readFile, unlink, writeFile } from 'node:fs/promises'
 import { basename, dirname, join, posix, relative, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import rehypeShiki from '@shikijs/rehype'
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
 import rehypeStringify from 'rehype-stringify'
 import remarkGfm from 'remark-gfm'
@@ -22,6 +23,14 @@ const markdown = unified()
   .use(remarkRehype)
   // remark-rehype already prefixes the generated footnote IDs and matching links.
   .use(rehypeSanitize, { ...defaultSchema, clobberPrefix: '' })
+  // Shiki adds trusted theme styles to the sanitized code text.
+  .use(rehypeShiki, {
+    theme: 'github-light',
+    langs: [],
+    lazy: true,
+    fallbackLanguage: 'text',
+    addLanguageClass: true,
+  })
   .use(rehypeStringify)
 
 function isMissing(error: unknown) {

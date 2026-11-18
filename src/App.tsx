@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Link, Navigate, Route, Routes, useParams } from 'react-router'
+import { Link, Navigate, Route, Routes } from 'react-router'
 import WorldGate from './WorldGate'
 import Home from './pages/Home';
-
+import About from './pages/About';
 
 type GameScreen =
   | { type: 'scene' }
@@ -12,27 +12,6 @@ type GameScreen =
 // 世界入口：只负责让访客选择进入哪个世界
 
 
-
-// 传统博客文章
-function TraditionalArticle() {
-  const { slug } = useParams()
-
-  return (
-    <main className="min-h-screen bg-white p-10 text-slate-900">
-      <div className="mx-auto max-w-3xl">
-        <Link to="/blog" className="text-indigo-600 hover:underline">
-          ← 返回博客首页
-        </Link>
-
-        <h1 className="mt-8 text-3xl font-bold">{slug}</h1>
-
-        <p className="mt-6 text-slate-600">
-          这是传统博客的文章页面。
-        </p>
-      </div>
-    </main>
-  )
-}
 
 // 游戏世界：内部导航由 React 状态管理
 function GameWorld() {
@@ -130,9 +109,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<WorldGate />} />
-
+      <Route path='/blog/about' element={<About />} />
       <Route path="/blog" element={<Home />} />
-      <Route path="/posts/:slug" element={<TraditionalArticle />} />
 
       <Route path="/game/*" element={<GameWorld />} />
 

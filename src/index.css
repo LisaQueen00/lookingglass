@@ -75,3 +75,39 @@
   inherits: false;
   initial-value: transparent;
 }
+
+
+/* md format */
+
+.markdown-body h1 {
+  @apply text-3xl font-bold mb-6;
+}
+
+.markdown-body h2 {
+  @apply text-2xl font-s_g mt-8 mb-4;
+}
+
+.markdown-body p {
+  @apply leading-8 mb-4;
+  @apply font-s_g;
+}
+
+/* 所有代码统一使用 JetBrains Mono */
+.markdown-body code {
+  @apply font-jbmono;
+}
+
+/* 行内代码 */
+.markdown-body :not(pre) > code {
+  @apply rounded bg-slate-100 px-1.5 py-0.5 text-sm text-blue-700;
+}
+
+/* 多行代码块 */
+.markdown-body pre {
+  @apply my-5 overflow-x-auto rounded-xl bg-slate-50 p-4 text-slate-900;
+}
+
+/* 代码块内部文字 */
+.markdown-body pre code {
+  @apply bg-transparent p-0 text-sm leading-6;
+}
