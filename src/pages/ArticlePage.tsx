@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link,useParams } from 'react-router'
 import Header from '../components/sharing/Header'
 import Pagecontent from '../components/sharing/Pagecontent'
@@ -12,6 +12,7 @@ type ArticleContent = {
 function ArticlePage() {
     const { section, slug } = useParams()
     const [article, setArticle] = useState<ArticleContent | null>(null)
+    const articleRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         if (!section || !slug) return
@@ -30,6 +31,53 @@ function ArticlePage() {
         setArticle(null)
         loadArticle().catch(console.error)
     }, [section, slug])
+
+    useEffect(() => {
+    const container = articleRef.current
+        if (!container || !article) return
+
+        const codeBlocks = container.querySelectorAll('pre.shiki')
+
+        codeBlocks.forEach((pre) => {
+            const button = document.createElement('button')
+
+            button.type = 'button'
+            button.className = 'code-copy-button'
+            button.textContent = '复制'
+            button.setAttribute('aria-label', '复制代码')
+
+            pre.appendChild(button)
+        })
+
+        return () => {
+            container.querySelectorAll('.code-copy-button').forEach((button) => {
+                button.remove()
+            })
+        }
+    }, [article])
+
+    async function handleArticleClick(event: React.MouseEvent<HTMLDivElement>) {
+        const target = event.target
+
+        if (!(target instanceof Element)) return
+
+        const button = target.closest<HTMLButtonElement>('.code-copy-button')
+        if (!button) return
+
+        const pre = button.closest('pre')
+        const code = pre?.querySelector('code')
+
+        if (!code) return
+
+        try {
+            await navigator.clipboard.writeText(code.textContent ?? '')
+
+            button.textContent = '已复制 ✓'
+        } catch (error) {
+            console.error('Failed to copy code:', error)
+            button.textContent = '复制失败'
+        }
+    }
 
     return (
         <div className="min-h-screen bg-[#F8FAFD]">
@@ -75,9 +123,11 @@ function ArticlePage() {
                             "
                         >
                             <div
-                            className="markdown-body mx-12 my-8"
-                            dangerouslySetInnerHTML={{ __html: article.html }}
-                             />
+                                ref={articleRef}
+                                onClick={handleArticleClick}
+                                className="markdown-body mx-12 my-8"
+                                dangerouslySetInnerHTML={{ __html: article.html }}
+                            />
                         </div>
                         )
                         }

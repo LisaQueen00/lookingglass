@@ -103,9 +103,46 @@
 }
 
 /* 多行代码块 */
-.markdown-body pre {
+/* .markdown-body pre {
   @apply my-5 overflow-x-auto rounded-xl bg-slate-200 p-4 text-slate-900;
+} */
+
+.markdown-body pre.shiki {
+    @apply rounded-xl p-5 my-6 overflow-x-auto;
+    background-color: #F1F5F9 !important;
 }
+
+.markdown-body pre.shiki {
+    position: relative;
+}
+
+.markdown-body .code-copy-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    padding: 4px 10px;
+    border: 1px solid #DCEAF6;
+    border-radius: 6px;
+
+    background-color: #FFFFFF;
+    color: #64748B;
+    font-size: 12px;
+
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+.markdown-body pre.shiki:hover .code-copy-button,
+.markdown-body .code-copy-button:focus-visible {
+    opacity: 1;
+}
+
+.markdown-body .code-copy-button:hover {
+    background-color: #E2E8F0;
+}
+
 
 /* 代码块内部文字 */
 .markdown-body pre code {
