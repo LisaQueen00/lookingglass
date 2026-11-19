@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { Link,useParams } from 'react-router'
 import Header from '../components/sharing/Header'
 import Pagecontent from '../components/sharing/Pagecontent'
 
@@ -37,12 +37,52 @@ function ArticlePage() {
                 <Header />
 
                 <Pagecontent>
-                    {article && (
+                    <div className='flex justify-center'>
+                        <div className='w-5/7 border-x-gray-900  px-4 my-4'>
+                            <Link
+                                to={`/blog/${section}`}
+                                className="
+                                    inline-flex items-center gap-2
+                                    text-sm text-slate-500
+                                    hover:text-blue-600
+                                    transition-colors duration-200
+                                    mb-6
+                                "
+                            >
+                                <span aria-hidden="true">←</span>
+                                back to {section}
+                            </Link>                    
+                        
+                        </div>
+                    </div>
+
+                    <div className='flex justify-center'>
+                        {article && (
                         <div
-                            className="markdown-body"
+                            className="
+                                relative w-5/7 px-4 my-4
+                                border-r-2 border-dashed border-r-[#A8B9CE]
+                                before:content-['']
+                                before:absolute
+                                before:left-0
+                                before:top-0
+                                before:bottom-0
+                                before:w-3.5
+                                before:bg-[url('/decorations/stars.svg')]
+                                before:bg-repeat-y
+                                before:bg-top
+                                before:pointer-events-none
+                            "
+                        >
+                            <div
+                            className="markdown-body mx-12 my-8"
                             dangerouslySetInnerHTML={{ __html: article.html }}
-                        />
-                    )}
+                             />
+                        </div>
+                        )
+                        }
+                    </div>
+                    
                 </Pagecontent>
             </main>
         </div>

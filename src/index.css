@@ -80,16 +80,16 @@
 /* md format */
 
 .markdown-body h1 {
-  @apply text-3xl font-bold mb-6;
+  @apply text-3xl font-notescan font-black mb-6;
 }
 
 .markdown-body h2 {
-  @apply text-2xl font-s_g mt-8 mb-4;
+  @apply text-2xl font-notescan font-bold mt-8 mb-4;
 }
 
 .markdown-body p {
   @apply leading-8 mb-4;
-  @apply font-s_g;
+  @apply font-notescan font-normal;
 }
 
 /* 所有代码统一使用 JetBrains Mono */
@@ -104,7 +104,7 @@
 
 /* 多行代码块 */
 .markdown-body pre {
-  @apply my-5 overflow-x-auto rounded-xl bg-slate-50 p-4 text-slate-900;
+  @apply my-5 overflow-x-auto rounded-xl bg-slate-200 p-4 text-slate-900;
 }
 
 /* 代码块内部文字 */

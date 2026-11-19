@@ -28,6 +28,7 @@ function ContentCard (props: ContentCardProps){
                 hover:border-[#A8CBEA]
                 hover:bg-blue-50/40
                 h-45
+                mt-3 mx-3
             ">
             <div className="w-1/3 shrink-0 overflow-hidden rounded-lg">
                 <img src="" alt="" className="w-full h-full object-cover" />
